@@ -1,0 +1,16 @@
+version: '2.1'
+services:
+
+  # To run this image, you must create a .env file with following content:
+  # BACKEND_URL=...   # backend API base url (the part before "/api/...")
+  # BOT_TOKEN=...     # bot token
+
+  grafolean-worker-ping:
+    # If you wish to load an explicit version, change the next line. For example:
+    #   image: grafolean/grafolean-worker-ping:v1.0.0
+    image: grafolean/grafolean-worker-ping
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .env:/etc/environment
