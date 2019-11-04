@@ -4,7 +4,6 @@ from collections import defaultdict
 from colors import color
 import logging
 from multiping import multi_ping
-from pytz import utc
 import requests
 import socket
 import dotenv
