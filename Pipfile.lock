@@ -24,6 +24,13 @@
             "index": "pypi",
             "version": "==1.1.8"
         },
+        "apscheduler": {
+            "hashes": [
+                "sha256:529afb7909e08416132891188cbfea5351eb35e4a684b67e983d819e8d01a6b0",
+                "sha256:cde18f6dbffa1b75aff67fd7fe423a3020cb0363f6c67bd45f24306d90898231"
+            ],
+            "version": "==3.6.1"
+        },
         "certifi": {
             "hashes": [
                 "sha256:e4f3620cfea4f83eedc95b24abd9cd56f3c4b146dd0177e83a21b4eb49e21e50",
@@ -40,11 +47,11 @@
         },
         "grafoleancollector": {
             "hashes": [
-                "sha256:45ec432a6336de8d3ab9a3f462382bdb57243ec59a69fb5d746569d362b00cc2",
-                "sha256:4688e78e2b721acc0ace9e2b64d8395903b31fde5e29c6c6ab06fb41baf77aab"
+                "sha256:1857a27514d77d7dac388383d0bc310be83121840b4f2f56e2678775aeaae4ad",
+                "sha256:b3280fa04d38d8df9a5501b37df55a7432ff398fb3e5c9eba362e08da08aa844"
             ],
             "index": "pypi",
-            "version": "==0.0.2"
+            "version": "==0.0.4"
         },
         "idna": {
             "hashes": [
@@ -70,6 +77,13 @@
             "index": "pypi",
             "version": "==0.10.3"
         },
+        "pytz": {
+            "hashes": [
+                "sha256:1c557d7d0e871de1f5ccd5833f60fb2550652da6be2693c1e02300743d21500d",
+                "sha256:b02c06db6cf09c12dd25137e563b31700d3b80fcc4ad23abb7a315f2789819be"
+            ],
+            "version": "==2019.3"
+        },
         "requests": {
             "hashes": [
                 "sha256:11e007a8a2aa0323f5a921e9e6a2d7e4e67d9877e85773fba9ba6419025cbeb4",
@@ -77,6 +91,20 @@
             ],
             "index": "pypi",
             "version": "==2.22.0"
+        },
+        "six": {
+            "hashes": [
+                "sha256:3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c",
+                "sha256:d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"
+            ],
+            "version": "==1.12.0"
+        },
+        "tzlocal": {
+            "hashes": [
+                "sha256:11c9f16e0a633b4b60e1eede97d8a46340d042e67b670b290ca526576e039048",
+                "sha256:949b9dd5ba4be17190a80c0268167d7e6c92c62b30026cf9764caf3e308e5590"
+            ],
+            "version": "==2.0.0"
         },
         "urllib3": {
             "hashes": [
@@ -147,7 +175,7 @@
                 "sha256:3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c",
                 "sha256:d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"
             ],
-            "version": "==1.12"
+            "version": "==1.12.0"
         },
         "typed-ast": {
             "hashes": [
