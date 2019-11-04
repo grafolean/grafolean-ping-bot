@@ -10,9 +10,6 @@ services:
     #   image: grafolean/grafolean-collector-ping:v1.0.0
     image: grafolean/grafolean-collector-ping
     container_name: grafolean-collector-ping
-    build:
-      context: .
-      dockerfile: Dockerfile
     environment:
       # Backend url must be set to the address of the Grafolean backend, for example this uses Grafolean hosted service:
       # - BACKEND_URL=https://grafolean.com/api

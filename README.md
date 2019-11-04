@@ -30,11 +30,17 @@ Docker is the easiest and currently the only officially supported way. Note that
     $ wget https://gitlab.com/grafolean/grafolean-collector-ping/raw/master/docker-compose.yml
     ```
 
-3) edit `docker-compose.yml` and change:
+3) These settings must be set:
+
     - mandatory: `BACKEND_URL` (set to the URL of Grafolean backend, for example `https://grafolean.com/api`),
     - mandatory: `BOT_TOKEN` (set to the bot token from step 1),
     - optional: `JOBS_REFRESH_INTERVAL` (interval in seconds at which the jobs definitions will be updated)
-   Alternatively, you can also copy `.env.example` to `.env` and change settings there (leaving `docker-compose.yml` in original state).
+
+   The easiest way to set them is to download example `.env` and edit it:
+    ```
+    $ wget https://gitlab.com/grafolean/grafolean-collector-ping/raw/master/.env.example -O .env
+    $ nano .env
+    ```
 
 4) run: `docker-compose up -d`
 
