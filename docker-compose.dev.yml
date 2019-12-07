@@ -1,0 +1,12 @@
+version: '2.1'
+services:
+
+  # Build a local Docker image. Usage:
+  #   $ docker-compose -f docker-compose.dev.yml build
+
+  grafolean-collector-ping:
+    image: grafolean/grafolean-collector-ping
+    container_name: grafolean-collector-ping
+    build:
+      context: .
+      dockerfile: Dockerfile
