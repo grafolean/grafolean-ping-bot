@@ -88,8 +88,15 @@ if __name__ == "__main__":
 
     backend_url = os.environ.get('BACKEND_URL')
     bot_token = os.environ.get('BOT_TOKEN')
+    if not bot_token:
+        # bot token can also be specified via contents of a file:
+        bot_token_from_file = os.environ.get('BOT_TOKEN_FROM_FILE')
+        if bot_token_from_file:
+            with open(bot_token_from_file, 'rt') as f:
+                bot_token = f.read()
+
     if not backend_url or not bot_token:
-        raise Exception("Please specify BACKEND_URL and BOT_TOKEN env vars.")
+        raise Exception("Please specify BACKEND_URL and BOT_TOKEN / BOT_TOKEN_FROM_FILE env vars.")
     jobs_refresh_interval = int(os.environ.get('JOBS_REFRESH_INTERVAL', 120))
 
     c = PingCollector(backend_url, bot_token, jobs_refresh_interval)
