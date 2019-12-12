@@ -1,21 +1,21 @@
-# About Grafolean Ping Collector
+# About Grafolean Ping bot
 
-This package is a Ping Collector for Grafolean, an easy to use generic monitoring system.
+This package is an ICMP Ping bot for Grafolean, an easy to use generic monitoring system.
 
 Once installed, all the configuration of Ping sensors is done through Grafolean's web-based user interface. Depending on permissions,
-a single Ping Collector instance can be fetching data for multiple accounts and entities. The fetching intervals can be specified with
+a single Ping bot instance can be fetching data for multiple accounts and entities. The fetching intervals can be specified with
 up to a second precision.
 
 Requirements:
-- the devices will be pinged *from the container* (make sure Ping Collector is installed in the correct network and that there are no firewalls in between)
+- the devices will be pinged *from the container* (make sure Ping bot is installed in the correct network and that there are no firewalls in between)
 - Grafolean must be accessible via HTTP(S)
 
 # License
 
 License is Commons Clause license (on top of Apache 2.0) - source is available, you can use it for free (commercially too), modify and
-share, but you can't sell it to third parties. See [LICENSE.md](https://gitlab.com/grafolean/grafolean-collector-ping/blob/master/LICENSE.md) for details.
+share, but you can't sell it to third parties. See [LICENSE.md](https://github.com/grafolean/grafolean-ping-bot/blob/master/LICENSE.md) for details.
 
-If in doubt, please [open an issue](https://gitlab.com/grafolean/grafolean-collector-ping/issues) to get further clarification.
+If in doubt, please [open an issue](https://github.com/grafolean/grafolean-ping-bot/issues) to get further clarification.
 
 # Install (docker / docker-compose)
 
@@ -23,11 +23,11 @@ Docker is the easiest and currently the only officially supported way. Note that
 
 1) log in to Grafolean service (either https://grafolean.com/ or self-hosted), select an appropriate `Account` and create a new `Bot`. Make sure that selected protocol is `Ping`. Copy the bot token.
 
-2) save [docker-compose.yml](https://gitlab.com/grafolean/grafolean-collector-ping/raw/master/docker-compose.yml) to a local file:
+2) save [docker-compose.yml](https://github.com/grafolean/grafolean-ping-bot/raw/master/docker-compose.yml) to a local file:
     ```
-    $ mkdir ~/pingcollector
-    $ cd ~/pingcollector
-    $ wget https://gitlab.com/grafolean/grafolean-collector-ping/raw/master/docker-compose.yml
+    $ mkdir ~/pingbot
+    $ cd ~/pingbot
+    $ wget https://github.com/grafolean/grafolean-ping-bot/raw/master/docker-compose.yml
     ```
 
 3) These settings must be set:
@@ -38,13 +38,13 @@ Docker is the easiest and currently the only officially supported way. Note that
 
    The easiest way to set them is to download example `.env` and edit it:
     ```
-    $ wget https://gitlab.com/grafolean/grafolean-collector-ping/raw/master/.env.example -O .env
+    $ wget https://github.com/grafolean/grafolean-ping-bot/raw/master/.env.example -O .env
     $ nano .env
     ```
 
 4) run: `docker-compose up -d`
 
-If you get no error, congratulations! Everything else is done from within the Grafolean UI. You can however check the status of container as usually by running `docker ps`, and investigate logs by running `docker logs -f grafolean-collector-ping`.
+If you get no error, congratulations! Everything else is done from within the Grafolean UI. You can however check the status of container as usually by running `docker ps`, and investigate logs by running `docker logs -f grafolean-ping-bot`.
 
 In case of error make sure that the user is allowed to run `docker` (that is, that it is in `docker` group) by running `docker ps`. Alternatively, container can be run using `sudo` (line 4 then reads `sudo docker-compose up -d`).
 
@@ -60,7 +60,7 @@ Upgrading should be easy:
 
 Container logs can be checked by running:
 ```
-$ docker logs --since 5m -f grafolean-collector-ping
+$ docker logs --since 5m -f grafolean-ping-bot
 ```
 
 ## Building locally
@@ -80,4 +80,4 @@ To contribute to this repository, CLA needs to be signed. Please open an issue a
 
 ## Issues
 
-If you encounter any problems installing or running the software, please let us know in the [issues](https://gitlab.com/grafolean/grafolean-collector-ping/issues). Please make an effort when describing the issue. If we can reproduce the problem, we can also fix it much faster.
+If you encounter any problems installing or running the software, please let us know in the [issues](https://github.com/grafolean/grafolean-ping-bot/issues). Please make an effort when describing the issue. If we can reproduce the problem, we can also fix it much faster.

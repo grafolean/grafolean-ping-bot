@@ -37,14 +37,14 @@ def send_results_to_grafolean(backend_url, bot_token, account_id, values):
         log.exception("Error sending data to Grafolean")
 
 
-class PingCollector(Collector):
+class PingBot(Collector):
 
     def jobs(self):
         for entity_info in self.fetch_job_configs('ping'):
             intervals = list(set([sensor_info["interval"] for sensor_info in entity_info["sensors"]]))
             job_info = { **entity_info, "backend_url": self.backend_url, "bot_token": self.bot_token }
             job_id = str(entity_info["entity_id"])
-            yield job_id, intervals, PingCollector.do_ping, job_info
+            yield job_id, intervals, PingBot.do_ping, job_info
 
     @staticmethod
     def do_ping(*args, **job_info):
@@ -122,5 +122,5 @@ if __name__ == "__main__":
     if not bot_token:
         raise Exception("Please specify BOT_TOKEN / BOT_TOKEN_FROM_FILE env var.")
 
-    c = PingCollector(backend_url, bot_token, jobs_refresh_interval)
+    c = PingBot(backend_url, bot_token, jobs_refresh_interval)
     c.execute()

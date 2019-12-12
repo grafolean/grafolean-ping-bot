@@ -4,9 +4,9 @@ services:
   # Build a local Docker image. Usage:
   #   $ docker-compose -f docker-compose.dev.yml build
 
-  grafolean-collector-ping:
-    image: grafolean/grafolean-collector-ping
-    container_name: grafolean-collector-ping
+  grafolean-ping-bot:
+    image: grafolean/grafolean-ping-bot
+    container_name: grafolean-ping-bot
     build:
       context: .
       dockerfile: Dockerfile
