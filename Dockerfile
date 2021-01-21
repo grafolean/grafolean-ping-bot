@@ -2,6 +2,8 @@ FROM python:3.6-slim-stretch as python-requirements
 COPY ./Pipfile ./Pipfile.lock /pingbot/
 WORKDIR /pingbot
 RUN \
+    apt-get update && \
+    apt-get install -q -y git build-essential libpq-dev python3-dev libffi-dev && \
     pip install pipenv && \
     pipenv lock -r > /requirements.txt
 
